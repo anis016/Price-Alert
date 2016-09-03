@@ -4,7 +4,7 @@
 
 # Configuration files #
 ###################
-/src/config.py
+#/src/config.py
 
 # Virtual env files #
 ###################
@@ -13,3 +13,10 @@
 # Directory files #
 ###################
 /.idea
+src/__pycache__/
+src/common/__pycache__/
+src/models/__pycache__/
+src/models/alerts/__pycache__/
+src/models/items/__pycache__/
+src/models/stores/__pycache__/
+src/models/users/__pycache__/
