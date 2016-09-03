@@ -3,6 +3,7 @@ __author__ = 'anis'
 Date: 26.08.16
 Time: 22:43
 '''
+import os
 
 from flask import Flask
 from flask import render_template
@@ -12,7 +13,7 @@ from src.common.database import Database
 
 app = Flask(__name__)
 app.config.from_object('config')  # takes the file name defined as "config". searches for the Capitalize variable to store.
-app.secret_key = "1234"
+app.secret_key = os.environ.get('SECRET_KEY')
 
 
 @app.before_first_request
