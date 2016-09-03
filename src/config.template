@@ -1,0 +1,14 @@
+'''
+__author__ = 'anis'
+All kind of configuration goes here. feel free to update as per usage.
+'''
+
+DEBUG = True
+ADMINS = frozenset([
+    "anis.cuet016@gmail.com"
+])
+
+MAILGUN_CONFIG = {"URL": "YOUR_MAILGUL_URL",
+     "API_KEY": "YOUR_MAILGUL_API_KEY",
+     "FROM": "YOUR_MAILGUL_POSTMASTER"
+}

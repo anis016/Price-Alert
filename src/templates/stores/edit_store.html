@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-headear">
+    <h1>Create Store</h1>
+</div>
+<div class="form-size">
+    <form method="post" action="{{ url_for('stores.edit_store', store_id=store._id) }}">
+        <div class="form-group">
+            <label for="name">Store Name</label>
+            <input type="text" class="form-control" value="{{ store.name }}" id="name", name="name" placeholder="Store Name, eg: Amazon, John Lewis">
+        </div>
+        <div class="form-group">
+            <label for="url_prefix">URL Prefix</label>
+            <input type="text" class="form-control" value="{{ store.url_prefix }}" id="url_prefix", name="url_prefix" placeholder="URL prefix, eg: http://www.amazon.com" aria-describedby="storeURLPrefixHelp">
+            <span id="storeURLPrefixHelp" class="help-block">URLs of all items in this online store start with?</span>
+        </div>
+        <div class="form-group">
+            <label for="tag_name">Tag Name</label>
+            <input type="text" class="form-control" id="tag_name", name="tag_name" value="{{ store.tag_name }}" placeholder="Span" aria-describedby="storeTagNameHelp">
+            <span id="storeTagNameHelp" class="help-block">What is the HTML tag of the item that contains the item price ? (usually <code>span</code>)</span>
+        </div>
+        <div class="form-group">
+            <label for="query">Query</label>
+            <input type="text" class="form-control" id="query", name="query" value='{{ store.query | tojson }}' placeholder='{"id": "price-now"}' aria-describedby="storeQueryHelp">
+            <span id="storeQueryHelp" class="help-block">JSON query for finding the tag of the price. Use double quotation marks. example:<code>{"id": "value", "id1": "value1"}</code></span>
+        </div>
+        <button type="submit" class="btn btn-default">Update Store</button>
+    </form>
+
+</div>
+{% endblock %}

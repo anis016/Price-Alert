@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-size">
+    <h2>Join Us!</h2>
+    <hr>
+    <form method="post" action="{{ url_for('users.register_user') }}">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-success">Sign up</button>
+    </form>
+</div>
+{% endblock %}

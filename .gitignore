@@ -1,0 +1,15 @@
+# Compiled source #
+###################
+*.pyc
+
+# Configuration files #
+###################
+/src/config.py
+
+# Virtual env files #
+###################
+/alert_venv
+
+# Directory files #
+###################
+/.idea

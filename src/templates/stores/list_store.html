@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>Stores
+            <small>list of supported stores</small>
+        </h1>
+    </div>
+    {% if session['email'] in config.ADMINS %}
+        <p>
+            <a class="btn btn-success" href="{{ url_for('stores.create_store') }}"> <span
+                    class="glyphicon glyphicon-plus"></span> Create New</a>
+        </p>
+    {% endif %}
+    <div class="list-group">
+        {% for store in stores %}
+        <a href="{{ url_for('stores.store_page', store_id=store._id) }}" class="list-group-item">
+            <div>
+                <h4 class="list-group-item-heading">{{ store.name }}</h4>
+                <p class="list-group-item-text">All URL's in this store should start with <strong><strong>{{ store.url_prefix }}</strong></strong></p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
